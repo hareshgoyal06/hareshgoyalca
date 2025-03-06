@@ -44,33 +44,108 @@ const Preloader: React.FC<PreloaderProps> = ({ onFinish }) => {
 
   return (
     <motion.div
-    className="fixed inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-purple-500 to-indigo-600 z-50"
-    variants={containerVariants}
-    initial="hidden"
-    animate="visible"
-    exit="exit"
+  className="fixed inset-0 flex flex-col items-center justify-center z-50"
+  style={{
+    backgroundColor: "#000",
+    backgroundImage: "radial-gradient(#444 1px, transparent 1px)",
+    backgroundSize: "20px 20px",
+  }}
+  variants={containerVariants}
+  initial="hidden"
+  animate="visible"
+  exit="exit"
+>
+  <motion.h1
+    className="text-5xl font-extrabold drop-shadow-lg"
+    style={{
+      fontFamily: "'Inter', sans-serif",
+      color: "#fff",
+      textShadow: "0 0 10px rgba(255,255,255,0.9)",
+    }}
+    variants={itemVariants}
   >
-    <motion.h1
-      className="text-5xl font-extrabold text-white drop-shadow-lg"
-      variants={itemVariants}
-    >
-      Haresh Goyal
-    </motion.h1>
-    <motion.p className="mt-4 text-xl text-gray-200" variants={itemVariants}>
-      Welcome :D
-    </motion.p>
-    <motion.div
-      className="mt-8 w-20 h-20 bg-white rounded-full shadow-xl flex items-center justify-center"
-      variants={itemVariants}
-    >
-      <motion.div
-        className="w-10 h-10 bg-gradient-to-br from-pink-500 to-red-500 rounded-full"
-        animate={{ rotate: [0, 360] }}
-        transition={{ loop: Infinity, duration: 2 }}
-      />
-    </motion.div>
-  </motion.div>
+    Haresh Goyal
+  </motion.h1>
+  <motion.p
+    className="mt-4 text-xl"
+    style={{
+      fontFamily: "'Inter', sans-serif",
+      color: "#ddd",
+      textShadow: "0 0 8px rgba(255,255,255,0.7)",
+    }}
+    variants={itemVariants}
+  >
+    Welcome :D
+  </motion.p>
   
+  {/* Gradient Dot Cluster */}
+  <motion.div
+    className="mt-8 flex items-center justify-center space-x-2"
+    variants={itemVariants}
+  >
+    <motion.div
+      className="rounded-full"
+      style={{
+        width: "12px",
+        height: "12px",
+        background: "radial-gradient(circle at 30% 30%, #ff7e5f, #feb47b)",
+        boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+        transform: "rotateX(15deg) rotateY(15deg)",
+      }}
+      animate={{ rotate: [0, 360] }}
+      transition={{ loop: Infinity, duration: 2 }}
+    />
+    <motion.div
+      className="rounded-full"
+      style={{
+        width: "16px",
+        height: "16px",
+        background: "radial-gradient(circle at 30% 30%, #ff7e5f, #feb47b)",
+        boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+        transform: "rotateX(15deg) rotateY(15deg)",
+      }}
+      animate={{ rotate: [0, 360] }}
+      transition={{ loop: Infinity, duration: 2 }}
+    />
+    <motion.div
+      className="rounded-full"
+      style={{
+        width: "24px",
+        height: "24px",
+        background: "radial-gradient(circle at 30% 30%, #ff7e5f, #feb47b)",
+        boxShadow: "0 8px 15px rgba(0,0,0,0.3)",
+        transform: "rotateX(15deg) rotateY(15deg)",
+      }}
+      animate={{ rotate: [0, 360] }}
+      transition={{ loop: Infinity, duration: 2 }}
+    />
+    <motion.div
+      className="rounded-full"
+      style={{
+        width: "16px",
+        height: "16px",
+        background: "radial-gradient(circle at 30% 30%, #ff7e5f, #feb47b)",
+        boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+        transform: "rotateX(15deg) rotateY(15deg)",
+      }}
+      animate={{ rotate: [0, 360] }}
+      transition={{ loop: Infinity, duration: 2 }}
+    />
+    <motion.div
+      className="rounded-full"
+      style={{
+        width: "12px",
+        height: "12px",
+        background: "radial-gradient(circle at 30% 30%, #ff7e5f, #feb47b)",
+        boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+        transform: "rotateX(15deg) rotateY(15deg)",
+      }}
+      animate={{ rotate: [0, 360] }}
+      transition={{ loop: Infinity, duration: 2 }}
+    />
+  </motion.div>
+</motion.div>
+
   );
 };
 
