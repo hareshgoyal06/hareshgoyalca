@@ -3,7 +3,14 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ParallaxBackground from "./components/ParallaxBackground";
 import MarioRunning from "./components/MarioRunning";
-// import Navbar from "./components/Navbar";
+import {Navbar} from "./components/Navbar";
+import {
+  IconBrandGithub,
+  IconHome,
+  IconBrandLinkedin,
+  IconBrandInstagram,
+  IconPaperclip,
+} from "@tabler/icons-react";
 // Container variants with smoother easing and scale
 const containerVariants = {
   hidden: { opacity: 0, scale: 0.95 },
@@ -23,6 +30,44 @@ const containerVariants = {
   },
 };
 
+const links = [
+  {
+    title: "Home",
+    icon: (
+      <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "#hero",
+  },
+  {
+    title: "Instagram",
+    icon: (
+      <IconBrandInstagram className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "https://www.instagram.com/hxreshgoyal/",
+  },
+
+  {
+    title: "LinkedIn",
+    icon: (
+      <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "https://www.linkedin.com/in/haresh-goyal/",
+  },
+  {
+    title: "GitHub",
+    icon: (
+      <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "https://github.com/hareshgoyal06",
+  },
+  {
+    title: "Resume",
+    icon: (
+      <IconPaperclip className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "/resume.pdf",
+  },
+];
 
 
 interface PreloaderProps {
@@ -69,11 +114,14 @@ const App: React.FC = () => {
       <AnimatePresence>
         {loading && <Preloader onFinish={() => setLoading(false)} />}
       </AnimatePresence>
-      <div>
-        <ParallaxBackground />
-        {/* <Navbar /> */}
+      <div className="min-h-screen bg-black">
+        <div className="relative">
+          <ParallaxBackground />
+          <div className="max-w-7xl mx-auto">
+            {!loading && <Navbar items={links} />}
+          </div>
+        </div>
       </div>
-      
     </>
   );
 };
