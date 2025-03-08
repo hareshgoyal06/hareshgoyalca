@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import ParallaxBackground from "./components/ParallaxBackground";
 import MarioRunning from "./components/MarioRunning";
 import {Navbar} from "./components/Navbar";
+import Terminal from "./components/Terminal";
+import HalfYearGitHubCalendar from "./components/Github";
 import {
   IconBrandGithub,
   IconHome,
@@ -82,29 +84,26 @@ const Preloader: React.FC<PreloaderProps> = ({ onFinish }) => {
 
   return (
     <motion.div
-  className="fixed inset-0 flex flex-col items-center justify-center z-50"
-  style={{
-    backgroundColor: "#071112",
-    backgroundImage: `
-      radial-gradient(circle, #444 1px, transparent 1px),
-      radial-gradient(circle, #444 1px, transparent 1px)
-    `,
-    backgroundPosition: "0 0, 10px 10px",
-    backgroundSize: "20px 20px",
-  }}
-  variants={containerVariants}
-  initial="hidden"
-  animate="visible"
-  exit="exit"
->
-  {/* Import Inter Font */}
-  
-  <MarioRunning />
-</motion.div>
-
-
+      className="fixed inset-0 flex flex-col items-center justify-center z-50"
+      style={{
+        backgroundColor: "#071112",
+        backgroundImage: `
+          radial-gradient(circle, #444 1px, transparent 1px),
+          radial-gradient(circle, #444 1px, transparent 1px)
+        `,
+        backgroundPosition: "0 0, 10px 10px",
+        backgroundSize: "20px 20px",
+      }}
+      variants={containerVariants}
+      initial="visible"   // Start immediately visible
+      animate="visible"   // Keep it visible (no fade-in)
+      exit="exit"         // Only fade out on exit
+    >
+      <MarioRunning />
+    </motion.div>
   );
 };
+
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -114,9 +113,17 @@ const App: React.FC = () => {
       <AnimatePresence>
         {loading && <Preloader onFinish={() => setLoading(false)} />}
       </AnimatePresence>
-      <div className="min-h-screen bg-black">
-        <div className="relative">
+      <div className="min-h-screen bg-[#071112] overflow-x-hidden"
+      >
+      <div className="relative">
+        <div id="hero">
           <ParallaxBackground />
+        </div>
+          <Terminal />
+          <HalfYearGitHubCalendar />
+
+
+          
           <div className="max-w-7xl mx-auto">
             {!loading && <Navbar items={links} />}
           </div>

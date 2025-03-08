@@ -14,7 +14,7 @@ const layers: Layer[] = [
   { src: "/images/mountains1.png", zIndex: 15, speed: 95 },
   { src: "/images/mountains2.png", zIndex: 16, speed: 93 },
   { src: "/images/mountains3.png", zIndex: 17, speed: 92 },
-  { src: "/images/mountains4.png", zIndex: 18, speed: 97 },
+  { src: "/images/mountains4.png", zIndex: 18, speed: 90 },
   { src: "/images/mountains5.png", zIndex: 19, speed: 98 },
   { src: "/images/mountains6.png", zIndex: 20, speed: 93 },
   { src: "/images/cloud1.png", zIndex: 2, speed: 38 },
@@ -26,7 +26,6 @@ const layers: Layer[] = [
 
 const ParallaxBackground: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);
-  const scrollThreshold = 500; // threshold for background color change (if needed)
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -36,6 +35,12 @@ const ParallaxBackground: React.FC = () => {
 
   return (
     <div className="relative w-screen h-screen overflow-hidden">
+      {/* Import the Press Start 2P font */}
+      <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+        rel="stylesheet"
+      />
+
       {/* Background layer */}
       <div
         className="absolute inset-0 transition-colors duration-500"
@@ -48,9 +53,7 @@ const ParallaxBackground: React.FC = () => {
 
       {/* Parallax layers */}
       {layers.map((layer, index) => {
-        // Check if this layer is mountain6 and apply a slower multiplier.
         const isMountain6 = layer.src.includes("mountains6.png");
-
         const multiplier = isMountain6 ? (layer.speed / 100) * 0.95 : layer.speed / 100;
         const transformStyle = layer.offsetY
           ? `translateY(calc(${layer.offsetY} - ${scrollY * multiplier}px))`
@@ -71,6 +74,24 @@ const ParallaxBackground: React.FC = () => {
           />
         );
       })}
+
+      {/* Title at z-index 10 */}
+      <div
+        style={{
+          position: "absolute",
+          zIndex: 10,
+          left: "50%",
+          top: "25%",
+          transform: "translate(-50%, -50%)",
+          textAlign: "center",
+          color: "#fff",
+          fontFamily: "'Press Start 2P', cursive",
+          fontSize: "4.25rem",
+          padding: "0.5rem",
+        }}
+      >
+        Hey, I'm Haresh Goyal
+      </div>
     </div>
   );
 };
