@@ -1,13 +1,30 @@
-import React from 'react';
+"use client";
 
+import React from 'react';
 import GitHubCalendar from 'react-github-calendar';
+import { VT323 } from 'next/font/google';
+
+const vt323 = VT323({
+  subsets: ['latin'],
+  weight: '400',
+});
+
+// Middle ground green theme for contributions—lighter greens for fewer commits and darker greens for more.
+export const greenThemeMid = [
+    "#e8f5e9", // very light green
+    "#c8e6c9", // light green
+    "#a5d6a7", // moderate green
+    "#81c784", // saturated green
+    "#66bb6a", // darker green for high commit levels
+];
+
 // Filter function: only show contributions from the last 6 months of the current year.
 const selectLastHalfYear = (contributions: any[]) => {
   const currentYear = new Date().getFullYear();
-  const currentMonth = new Date().getMonth(); // Month is 0-indexed
+  const currentMonth = new Date().getMonth(); // 0-indexed
   const shownMonths = 6;
 
-  return contributions.filter((activity: { date: string | number | Date; }) => {
+  return contributions.filter((activity: { date: string | number | Date }) => {
     const date = new Date(activity.date);
     const monthOfDay = date.getMonth();
     return (
@@ -18,44 +35,45 @@ const selectLastHalfYear = (contributions: any[]) => {
   });
 };
 
-const HalfYearGitHubCalendar = () => {
+const GreenThemeGitHubCalendar = () => {
   return (
-    <div style={{ margin: '2rem auto', maxWidth: '800px' }}>
+    <div
+      style={{ margin: '2rem auto', maxWidth: '800px' }}
+      className={vt323.className} // Apply VT323 font
+    >
       <GitHubCalendar
         username="hareshgoyal06"
-        year="last" // Render the most recent year (like on GitHub)
+        year="last"
         transformData={selectLastHalfYear}
         transformTotalCount={true}
         hideColorLegend={false}
         hideMonthLabels={false}
-        hideTotalCount={false}
+        hideTotalCount={true}
         labels={{
           totalCount: '{{count}} contributions in the last half year',
         }}
-        // Appearance settings
-        blockMargin={4}
+        // Appearance settings: bigger boxes and larger text
+        blockMargin={5}
         blockRadius={2}
-        blockSize={12}
-        fontSize={14}
-        colorScheme="dark" // Enforce dark color scheme
-        weekStart={0} // Sunday as start of the week
-        // Custom container style
+        blockSize={24}
+        fontSize={26}
+        colorScheme="dark"
+        weekStart={0}
+        // Custom container style: pitch-black background with no border
         style={{
-          border: '2px solid #333',
           padding: '1rem',
           borderRadius: '8px',
-          backgroundColor: '#1e1e1e',
+          backgroundColor: '#000000',
         }}
-        // Custom theme colors for light and dark modes
+        // Use the custom mid-tone green theme for both light and dark modes.
         theme={{
-          light: ['#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127'],
-          dark: ['#1e1e1e', '#2d2d2d', '#3c3c3c', '#4b4b4b', '#5a5a5a'],
+          light: greenThemeMid,
+          dark: greenThemeMid,
         }}
-        // Optional: Handle errors gracefully without throwing
         throwOnError={false}
       />
     </div>
   );
 };
 
-export default HalfYearGitHubCalendar;
+export default GreenThemeGitHubCalendar;

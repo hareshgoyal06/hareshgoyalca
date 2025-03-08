@@ -1,4 +1,13 @@
+"use client";
+
 import React, { useEffect, useRef, useState } from 'react';
+import '../globals.css';
+import { VT323 } from 'next/font/google';
+
+const vt323 = VT323({
+  subsets: ['latin'],
+  weight: '400',
+});
 
 const Terminal = () => {
   const terminalLines: string[] = [
@@ -13,7 +22,7 @@ const Terminal = () => {
 
   // Calculate total height needed for all lines
   const lineHeight = 24; // approximate height in pixels for each line
-  const totalHeight = lineHeight * terminalLines.length;
+  const totalHeight = lineHeight * (terminalLines.length + 1);
 
   // Refs & State
   const containerRef = useRef<HTMLDivElement>(null);
@@ -79,7 +88,7 @@ const Terminal = () => {
   return (
     <aside
       ref={containerRef}
-      className="bg-black text-white p-6 rounded-lg w-full max-w-lg font-mono"
+      className={`bg-black text-white p-6 rounded-lg w-full max-w-lg ${vt323.className}`}
     >
       <div className="flex justify-between items-center">
         <div className="flex space-x-2">
@@ -91,7 +100,7 @@ const Terminal = () => {
       </div>
       
       {/* Terminal content with pre-allocated space */}
-      <div className="mt-4" style={{ minHeight: `${totalHeight}px` }}>
+      <div className="mt-4 text-2xl" style={{ minHeight: `${totalHeight}px` }}>
         {displayLines.map((line, index) => (
           <p
             key={index}
