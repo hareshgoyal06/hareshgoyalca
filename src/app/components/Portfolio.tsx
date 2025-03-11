@@ -93,7 +93,8 @@ export default function PortfolioSection() {
             {/* Right Column - Projects */}
             <div>
               <ScrollArea className="h-[80vh] pr-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Updated grid: one project per row */}
+                <div className="grid grid-cols-1 gap-8">
                   {/* Project 1 */}
                   <div className="space-y-4">
                     <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
