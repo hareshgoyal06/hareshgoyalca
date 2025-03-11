@@ -88,7 +88,7 @@ const Terminal = () => {
   return (
     <aside
       ref={containerRef}
-      className={`bg-black text-white p-6 rounded-lg w-full max-w-lg ${vt323.className}`}
+      className={`bg-black text-white p-6 rounded-lg w-full max-w-2xl ${vt323.className} terminal-glow`}
     >
       <div className="flex justify-between items-center">
         <div className="flex space-x-2">
@@ -126,6 +126,10 @@ const Terminal = () => {
         }
         .animate-blink {
           animation: blink 1s infinite;
+        }
+        /* Subtle greenish glow */
+        .terminal-glow {
+          box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
         }
       `}</style>
     </aside>

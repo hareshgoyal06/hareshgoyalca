@@ -124,9 +124,8 @@ const App: React.FC = () => {
             <ParallaxBackground />
           </div>
           <div className="max-w-7xl mx-auto p-4 t ">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 p-8 -mt-20">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 p-8 ">
               <Terminal />
-              <HalfYearGitHubCalendar />
             </div>
             
 
