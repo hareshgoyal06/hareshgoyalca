@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import GreenThemeGitHubCalendar  from "./Github";
+import GreenThemeGitHubCalendar from "./Github";
 
 export default function PortfolioSection() {
   return (
@@ -43,7 +43,7 @@ export default function PortfolioSection() {
                   <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
                     <Image
                       src="/images/savi.jpg"
-                      alt=" logo"
+                      alt="logo"
                       width={32}
                       height={32}
                       className="object-contain"
@@ -59,7 +59,7 @@ export default function PortfolioSection() {
                   <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
                     <Image
                       src="/images/lef.png"
-                      alt=" logo"
+                      alt="logo"
                       width={32}
                       height={32}
                       className="object-contain"
@@ -74,7 +74,7 @@ export default function PortfolioSection() {
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
                     <Image
-                      src="/placeholder.svg?height=48&width=48"
+                      src="/images/tks.jpg"
                       alt="logo"
                       width={32}
                       height={32}
@@ -87,8 +87,7 @@ export default function PortfolioSection() {
                   </div>
                 </div>
               </div>
-                <GreenThemeGitHubCalendar />
-              
+              <GreenThemeGitHubCalendar />
             </div>
 
             {/* Right Column - Projects */}
@@ -100,16 +99,15 @@ export default function PortfolioSection() {
                     <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
                       <Image
                         src="/placeholder.svg?height=400&width=600"
-                        alt="Spots project screenshot"
+                        alt="project screenshot"
                         width={600}
                         height={400}
                         className="w-full object-cover"
                       />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold font-pressstart">Spots</h3>
-                      <p className="text-zinc-300">12000+ users in first week</p>
-                      <p className="text-zinc-400">Campus classroom availability map</p>
+                      <h3 className="text-2xl font-bold font-pressstart">NeuroBlocks</h3>
+                      <p className="text-zinc-300">A block-based interface to help developers create with BCIs</p>
                     </div>
                   </div>
 
@@ -118,16 +116,16 @@ export default function PortfolioSection() {
                     <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
                       <Image
                         src="/placeholder.svg?height=400&width=600"
-                        alt="Axiom project screenshot"
+                        alt="screenshot"
                         width={600}
                         height={400}
                         className="w-full object-cover"
                       />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold font-pressstart">Axiom</h3>
+                      <h3 className="text-2xl font-bold font-pressstart">Khanscapes</h3>
                       <p className="text-zinc-300">
-                        Code editor for SE212 (Logic and Computation) at UWaterloo
+                        Client-commissioned website for a landscaping business
                       </p>
                     </div>
                   </div>
@@ -137,16 +135,15 @@ export default function PortfolioSection() {
                     <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
                       <Image
                         src="/placeholder.svg?height=400&width=600"
-                        alt="Jarvis project screenshot"
+                        alt="project screenshot"
                         width={600}
                         height={400}
                         className="w-full object-cover"
                       />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold font-pressstart">Jarvis</h3>
-                      <p className="text-zinc-300">Featured on OpenCV Live</p>
-                      <p className="text-zinc-400">Interactive hologram environment</p>
+                      <h3 className="text-2xl font-bold font-pressstart">FlipDrip</h3>
+                      <p className="text-zinc-300">A "Tinder-like" app used to give catered personalizations</p>
                     </div>
                   </div>
 
@@ -155,16 +152,55 @@ export default function PortfolioSection() {
                     <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
                       <Image
                         src="/placeholder.svg?height=400&width=600"
-                        alt="BASIC Web project screenshot"
+                        alt="project screenshot"
                         width={600}
                         height={400}
                         className="w-full object-cover"
                       />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold font-pressstart">BASIC Web</h3>
-                      <p className="text-zinc-300">UofT Hacks 11 Winner</p>
-                      <p className="text-zinc-400">BASIC variant and web dev compiler</p>
+                      <h3 className="text-2xl font-bold font-pressstart">Mesh.io</h3>
+                      <p className="text-zinc-300">
+                        Developed a real-time networking platform, connecting individuals based on shared skill sets.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Project 5 */}
+                  <div className="space-y-4">
+                    <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
+                      <Image
+                        src="/placeholder.svg?height=400&width=600"
+                        alt="project screenshot"
+                        width={600}
+                        height={400}
+                        className="w-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold font-pressstart">UpTick</h3>
+                      <p className="text-zinc-300">
+                        Developed a comprehensive stock market analysis platform providing real-time data.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Project 6 */}
+                  <div className="space-y-4">
+                    <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
+                      <Image
+                        src="/placeholder.svg?height=400&width=600"
+                        alt="project screenshot"
+                        width={600}
+                        height={400}
+                        className="w-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold font-pressstart">TKSxGoogle</h3>
+                      <p className="text-zinc-300">
+                        Worked alongside Google to find a way to make their business model more effective
+                      </p>
                     </div>
                   </div>
                 </div>
