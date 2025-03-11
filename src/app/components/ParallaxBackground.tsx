@@ -28,11 +28,23 @@ const layers: Layer[] = [
 
 const ParallaxBackground: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Dynamic adjustments for mobile screens
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 600);
+    };
+
+    handleResize(); // Check initial screen size
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -77,7 +89,7 @@ const ParallaxBackground: React.FC = () => {
         );
       })}
 
-      {/* Title at z-index 10 */}
+      {/* Title at z-index 10 with dynamic font size */}
       <div
         style={{
           position: "absolute",
@@ -88,7 +100,7 @@ const ParallaxBackground: React.FC = () => {
           textAlign: "center",
           color: "#fff",
           fontFamily: "'Press Start 2P', cursive",
-          fontSize: "4.25rem",
+          fontSize: isMobile ? "2rem" : "4.25rem",
           padding: "0.5rem",
         }}
       >

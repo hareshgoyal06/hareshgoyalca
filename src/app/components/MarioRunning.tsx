@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 const MarioRunning = () => {
   const [jump, setJump] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     // After 2 seconds of walking, trigger the jump phase.
@@ -12,6 +13,17 @@ const MarioRunning = () => {
       setJump(true);
     }, 2000);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Dynamic adjustments for mobile screens
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 600);
+    };
+
+    handleResize(); // Check initial screen size
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Variant for shaking the title when hit.
@@ -98,7 +110,7 @@ const MarioRunning = () => {
               className="shiny-text"
               style={{
                 fontFamily: "'Press Start 2P', cursive",
-                fontSize: "7rem",
+                fontSize: isMobile ? "2rem" : "7rem",
                 margin: 0,
               }}
             >

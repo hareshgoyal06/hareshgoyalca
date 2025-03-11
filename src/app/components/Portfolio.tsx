@@ -16,18 +16,24 @@ export default function PortfolioSection() {
           font-family: 'Press Start 2P', cursive;
         }
       `}</style>
-      <div className="min-h-screen w-full text-white font-vt323">
+      <div
+        className="min-h-screen w-full text-white font-vt323"
+        style={{ background: "#071112" }}
+      >
         <div className="max-w-7xl mx-auto px-4 py-12 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {/* Left Column - Bio and Experience */}
             <div className="space-y-8">
               <div className="space-y-2">
-                <h1 className="text-4xl text md:text-5xl font-bold font-pressstart">
+                <h1 className="text-3xl md:text-4xl font-bold font-pressstart">
                   Haresh Goyal
                 </h1>
                 <p className="text-lg text-zinc-300">
                   Developer and engineer studying{" "}
-                  <Link href="#" className="underline underline-offset-4 text-yellow-500">
+                  <Link
+                    href="#"
+                    className="underline underline-offset-4 text-yellow-500"
+                  >
                     Computer Engineering @ the University of Waterloo
                   </Link>
                   . Always Building.
@@ -35,7 +41,8 @@ export default function PortfolioSection() {
               </div>
 
               <p className="text-lg text-zinc-300">
-                Finding intersections between logic and design to create cultivating projects. Always looking for new ways to innovate!
+                Finding intersections between logic and design to create
+                cultivating projects. Always looking for new ways to innovate!
               </p>
 
               <div className="space-y-6 pt-4">
@@ -50,8 +57,12 @@ export default function PortfolioSection() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl text-yellow-500 font-semibold font-pressstart">Savi Finance</h3>
-                    <p className="text-zinc-400">Full-Stack Developer Intern</p>
+                    <h3 className="text-xl text-yellow-500 font-semibold font-pressstart">
+                      Savi Finance
+                    </h3>
+                    <p className="text-zinc-400">
+                      Full-Stack Developer Intern
+                    </p>
                   </div>
                 </div>
 
@@ -66,7 +77,9 @@ export default function PortfolioSection() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl text-purple-900 font-semibold font-pressstart">Learning Enrichment Foundation</h3>
+                    <h3 className="text-xl text-purple-900 font-semibold font-pressstart">
+                      Learning Enrichment Foundation
+                    </h3>
                     <p className="text-zinc-400">Technical Agent</p>
                   </div>
                 </div>
@@ -82,7 +95,9 @@ export default function PortfolioSection() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl text-neutral-400 font-semibold font-pressstart">TKS</h3>
+                    <h3 className="text-xl text-neutral-400 font-semibold font-pressstart">
+                      TKS
+                    </h3>
                     <p className="text-zinc-400">Innovate</p>
                   </div>
                 </div>
@@ -107,8 +122,13 @@ export default function PortfolioSection() {
                       />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold font-pressstart">NeuroBlocks</h3>
-                      <p className="text-zinc-300">A block-based interface to help developers create with BCIs</p>
+                      <h3 className="text-2xl font-bold font-pressstart">
+                        NeuroBlocks
+                      </h3>
+                      <p className="text-zinc-300">
+                        A block-based interface to help developers create with
+                        BCIs
+                      </p>
                     </div>
                   </div>
 
@@ -124,7 +144,9 @@ export default function PortfolioSection() {
                       />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold font-pressstart">Khanscapes</h3>
+                      <h3 className="text-2xl font-bold font-pressstart">
+                        Khanscapes
+                      </h3>
                       <p className="text-zinc-300">
                         Client-commissioned website for a landscaping business
                       </p>
@@ -143,8 +165,12 @@ export default function PortfolioSection() {
                       />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold font-pressstart">FlipDrip</h3>
-                      <p className="text-zinc-300">A "Tinder-like" app used to give catered personalizations</p>
+                      <h3 className="text-2xl font-bold font-pressstart">
+                        FlipDrip
+                      </h3>
+                      <p className="text-zinc-300">
+                        A "Tinder-like" app used to give catered personalizations
+                      </p>
                     </div>
                   </div>
 
@@ -160,9 +186,12 @@ export default function PortfolioSection() {
                       />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold font-pressstart">Mesh.io</h3>
+                      <h3 className="text-2xl font-bold font-pressstart">
+                        Mesh.io
+                      </h3>
                       <p className="text-zinc-300">
-                        A real-time networking platform, based on shared skill sets.
+                        A real-time networking platform, based on shared skill
+                        sets.
                       </p>
                     </div>
                   </div>
@@ -179,9 +208,12 @@ export default function PortfolioSection() {
                       />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold font-pressstart">UpTick</h3>
+                      <h3 className="text-2xl font-bold font-pressstart">
+                        UpTick
+                      </h3>
                       <p className="text-zinc-300">
-                        Developed a comprehensive stock market analysis platform providing real-time data.
+                        Developed a comprehensive stock market analysis platform
+                        providing real-time data.
                       </p>
                     </div>
                   </div>
@@ -198,9 +230,12 @@ export default function PortfolioSection() {
                       />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold font-pressstart">TKSxGoogle</h3>
+                      <h3 className="text-2xl font-bold font-pressstart">
+                        TKSxGoogle
+                      </h3>
                       <p className="text-zinc-300">
-                        Worked alongside Google to find a way to make their business model more effective
+                        Worked alongside Google to find a way to make their business
+                        model more effective
                       </p>
                     </div>
                   </div>

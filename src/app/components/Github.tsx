@@ -9,13 +9,13 @@ const vt323 = VT323({
   weight: '400',
 });
 
-// Mid-tone green theme for contributions
-export const greenThemeMid = [
-  "#e8f5e9", // very light green
-  "#c8e6c9", // light green
-  "#a5d6a7", // moderate green
-  "#81c784", // saturated green
-  "#66bb6a", // darker green for high commit levels
+// Flat theme for contributions (using a popular flat UI palette)
+export const flatTheme = [
+  "#2c3e50", // Level 0: no contributions (dark blue-gray)
+  "#3498db", // Level 1: blue
+  "#2ecc71", // Level 2: green
+  "#f1c40f", // Level 3: yellow
+  "#e74c3c", // Level 4: red
 ];
 
 // Filter function: only show contributions from the last 6 months
@@ -67,8 +67,8 @@ const GreenThemeGitHubCalendar = () => {
           borderRadius: '4px',
         }}
         theme={{
-          light: greenThemeMid,
-          dark: greenThemeMid,
+          light: flatTheme,
+          dark: flatTheme,
         }}
         throwOnError={false}
       />
