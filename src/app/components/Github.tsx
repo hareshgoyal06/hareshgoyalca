@@ -9,22 +9,22 @@ const vt323 = VT323({
   weight: '400',
 });
 
-// Middle ground green theme for contributions—lighter greens for fewer commits and darker greens for more.
+// Mid-tone green theme for contributions
 export const greenThemeMid = [
-    "#e8f5e9", // very light green
-    "#c8e6c9", // light green
-    "#a5d6a7", // moderate green
-    "#81c784", // saturated green
-    "#66bb6a", // darker green for high commit levels
+  "#e8f5e9", // very light green
+  "#c8e6c9", // light green
+  "#a5d6a7", // moderate green
+  "#81c784", // saturated green
+  "#66bb6a", // darker green for high commit levels
 ];
 
-// Filter function: only show contributions from the last 6 months of the current year.
+// Filter function: only show contributions from the last 6 months
 const selectLastHalfYear = (contributions: any[]) => {
   const currentYear = new Date().getFullYear();
   const currentMonth = new Date().getMonth(); // 0-indexed
   const shownMonths = 6;
 
-  return contributions.filter((activity: { date: string | number | Date }) => {
+  return contributions.filter((activity) => {
     const date = new Date(activity.date);
     const monthOfDay = date.getMonth();
     return (
@@ -38,8 +38,10 @@ const selectLastHalfYear = (contributions: any[]) => {
 const GreenThemeGitHubCalendar = () => {
   return (
     <div
-      style={{ margin: '2rem auto', maxWidth: '800px' }}
-      className={vt323.className} // Apply VT323 font
+      className={`${vt323.className} text-white p-2 rounded-lg w-full max-w-md mx-auto`}
+      style={{
+        margin: '1rem auto',
+      }}
     >
       <GitHubCalendar
         username="hareshgoyal06"
@@ -52,20 +54,18 @@ const GreenThemeGitHubCalendar = () => {
         labels={{
           totalCount: '{{count}} contributions in the last half year',
         }}
-        // Appearance settings: bigger boxes and larger text
+        // Scaled-down appearance settings
         blockMargin={5}
         blockRadius={2}
         blockSize={24}
-        fontSize={26}
+        fontSize={24}
         colorScheme="dark"
         weekStart={0}
-        // Custom container style: pitch-black background with no border
+        // Custom container style with no background
         style={{
-          padding: '1rem',
-          borderRadius: '8px',
-          backgroundColor: '#000000',
+          padding: '0.5rem',
+          borderRadius: '4px',
         }}
-        // Use the custom mid-tone green theme for both light and dark modes.
         theme={{
           light: greenThemeMid,
           dark: greenThemeMid,

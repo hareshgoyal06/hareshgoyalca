@@ -16,8 +16,8 @@ const Terminal = () => {
     "✔ Installation complete.",
     "...",
     "Hey I'm Haresh 👋🏽",
-    "I'm a first-year computer engineer at the University of Waterloo 🪿",
     "I like to build stuff :)",
+    "Scroll to Learn More About Me!",
   ];
 
   // Calculate total height needed for all lines

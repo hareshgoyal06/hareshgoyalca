@@ -6,6 +6,7 @@ import MarioRunning from "./components/MarioRunning";
 import {Navbar} from "./components/Navbar";
 import Terminal from "./components/Terminal";
 import HalfYearGitHubCalendar from "./components/Github";
+import PortfolioSection from "./components/Portfolio";
 import {
   IconBrandGithub,
   IconHome,
@@ -127,7 +128,9 @@ const App: React.FC = () => {
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 p-8 ">
               <Terminal />
             </div>
-            
+            <div className="mt-20">
+              <PortfolioSection />
+            </div>
 
             
           </div>

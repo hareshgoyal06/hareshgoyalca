@@ -9,12 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-scroll-area": "^1.2.3",
     "@studio-freight/lenis": "^1.0.42",
     "@tabler/icons-react": "^3.31.0",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.4.10",
     "github-calendar": "^2.3.4",
     "gsap": "^3.12.7",
+    "lucide-react": "^0.479.0",
     "motion": "^12.4.10",
     "nes.css": "^2.3.0",
     "next": "15.2.1",
@@ -26,7 +29,8 @@
     "react-scroll-parallax": "^3.4.5",
     "sass": "^1.85.1",
     "tabler": "^1.0.0-alpha.8",
-    "tailwind-merge": "^3.0.2"
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
