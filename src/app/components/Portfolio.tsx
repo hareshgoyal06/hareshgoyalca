@@ -22,12 +22,12 @@ export default function PortfolioSection() {
             {/* Left Column - Bio and Experience */}
             <div className="space-y-8">
               <div className="space-y-2">
-                <h1 className="text-4xl md:text-5xl font-bold font-pressstart">
+                <h1 className="text-4xl text md:text-5xl font-bold font-pressstart">
                   Haresh Goyal
                 </h1>
                 <p className="text-lg text-zinc-300">
                   Developer and engineer studying{" "}
-                  <Link href="#" className="underline underline-offset-4">
+                  <Link href="#" className="underline underline-offset-4 text-yellow-500">
                     Computer Engineering @ the University of Waterloo
                   </Link>
                   . Always Building.
@@ -50,7 +50,7 @@ export default function PortfolioSection() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold font-pressstart">Savi Finance</h3>
+                    <h3 className="text-xl text-yellow-500 font-semibold font-pressstart">Savi Finance</h3>
                     <p className="text-zinc-400">Full-Stack Developer Intern</p>
                   </div>
                 </div>
@@ -66,7 +66,7 @@ export default function PortfolioSection() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold font-pressstart">Learning Enrichment Foundation</h3>
+                    <h3 className="text-xl text-purple-900 font-semibold font-pressstart">Learning Enrichment Foundation</h3>
                     <p className="text-zinc-400">Technical Agent</p>
                   </div>
                 </div>
@@ -78,11 +78,11 @@ export default function PortfolioSection() {
                       alt="logo"
                       width={32}
                       height={32}
-                      className="object-contain"
+                      className="object-contain h-fill"
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold font-pressstart">TKS</h3>
+                    <h3 className="text-xl text-neutral-400 font-semibold font-pressstart">TKS</h3>
                     <p className="text-zinc-400">Innovate</p>
                   </div>
                 </div>
@@ -98,11 +98,11 @@ export default function PortfolioSection() {
                   <div className="space-y-4">
                     <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
                       <Image
-                        src="/placeholder.svg?height=400&width=600"
+                        src="/images/neuro.png"
                         alt="project screenshot"
                         width={600}
                         height={400}
-                        className="w-full object-cover"
+                        className="object-cover"
                       />
                     </div>
                     <div>
@@ -115,7 +115,7 @@ export default function PortfolioSection() {
                   <div className="space-y-4">
                     <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
                       <Image
-                        src="/placeholder.svg?height=400&width=600"
+                        src="/images/khan.png"
                         alt="screenshot"
                         width={600}
                         height={400}
@@ -134,7 +134,7 @@ export default function PortfolioSection() {
                   <div className="space-y-4">
                     <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
                       <Image
-                        src="/placeholder.svg?height=400&width=600"
+                        src="/images/drip.png"
                         alt="project screenshot"
                         width={600}
                         height={400}
@@ -151,7 +151,7 @@ export default function PortfolioSection() {
                   <div className="space-y-4">
                     <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
                       <Image
-                        src="/placeholder.svg?height=400&width=600"
+                        src="/images/meshio.png"
                         alt="project screenshot"
                         width={600}
                         height={400}
@@ -161,7 +161,7 @@ export default function PortfolioSection() {
                     <div>
                       <h3 className="text-2xl font-bold font-pressstart">Mesh.io</h3>
                       <p className="text-zinc-300">
-                        Developed a real-time networking platform, connecting individuals based on shared skill sets.
+                        A real-time networking platform, based on shared skill sets.
                       </p>
                     </div>
                   </div>
@@ -170,7 +170,7 @@ export default function PortfolioSection() {
                   <div className="space-y-4">
                     <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
                       <Image
-                        src="/placeholder.svg?height=400&width=600"
+                        src="/images/tick.png"
                         alt="project screenshot"
                         width={600}
                         height={400}
@@ -189,7 +189,7 @@ export default function PortfolioSection() {
                   <div className="space-y-4">
                     <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
                       <Image
-                        src="/placeholder.svg?height=400&width=600"
+                        src="/images/tksgoogle.png"
                         alt="project screenshot"
                         width={600}
                         height={400}

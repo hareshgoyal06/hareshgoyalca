@@ -5,7 +5,6 @@ import ParallaxBackground from "./components/ParallaxBackground";
 import MarioRunning from "./components/MarioRunning";
 import {Navbar} from "./components/Navbar";
 import Terminal from "./components/Terminal";
-import HalfYearGitHubCalendar from "./components/Github";
 import PortfolioSection from "./components/Portfolio";
 import {
   IconBrandGithub,
