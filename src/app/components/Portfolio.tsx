@@ -112,15 +112,22 @@ export default function PortfolioSection() {
                 <div className="grid grid-cols-1 gap-8">
                   {/* Project 1 */}
                   <div className="space-y-4">
-                    <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
-                      <Image
-                        src="/images/neuro.png"
-                        alt="project screenshot"
-                        width={600}
-                        height={400}
-                        className="object-cover"
-                      />
-                    </div>
+                    <Link href="https://www.youtube.com/watch?v=j6_oXbUtO08">
+                      <div className="relative group rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
+                        <Image
+                          src="/images/neuro.png"
+                          alt="project screenshot"
+                          width={600}
+                          height={400}
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 group-hover:opacity-80 transition-opacity">
+                          <span className="text-white font-bold text-lg">
+                            Learn more
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
                     <div>
                       <h3 className="text-2xl font-bold font-pressstart">
                         NeuroBlocks
@@ -134,15 +141,22 @@ export default function PortfolioSection() {
 
                   {/* Project 2 */}
                   <div className="space-y-4">
-                    <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
-                      <Image
-                        src="/images/khan.png"
-                        alt="screenshot"
-                        width={600}
-                        height={400}
-                        className="w-full object-cover"
-                      />
-                    </div>
+                    <Link href="https://www.khanscapes.com/">
+                      <div className="relative group rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
+                        <Image
+                          src="/images/khan.png"
+                          alt="screenshot"
+                          width={600}
+                          height={400}
+                          className="w-full object-cover"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 group-hover:opacity-80 transition-opacity">
+                          <span className="text-white font-bold text-lg">
+                            Learn more
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
                     <div>
                       <h3 className="text-2xl font-bold font-pressstart">
                         Khanscapes
@@ -155,18 +169,25 @@ export default function PortfolioSection() {
 
                   {/* Project 3 */}
                   <div className="space-y-4">
-                    <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
-                      <Image
-                        src="/images/drip.png"
-                        alt="project screenshot"
-                        width={600}
-                        height={400}
-                        className="w-full object-cover"
-                      />
-                    </div>
+                    <Link href="https://devpost.com/software/wearmydrip">
+                      <div className="relative group rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
+                        <Image
+                          src="/images/drip.png"
+                          alt="project screenshot"
+                          width={600}
+                          height={400}
+                          className="w-full object-cover"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 group-hover:opacity-80 transition-opacity">
+                          <span className="text-white font-bold text-lg">
+                            Learn more
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
                     <div>
                       <h3 className="text-2xl font-bold font-pressstart">
-                        FlipDrip
+                        DripFlip
                       </h3>
                       <p className="text-zinc-300">
                         A "Tinder-like" app used to give catered personalizations
@@ -176,15 +197,22 @@ export default function PortfolioSection() {
 
                   {/* Project 4 */}
                   <div className="space-y-4">
-                    <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
-                      <Image
-                        src="/images/meshio.png"
-                        alt="project screenshot"
-                        width={600}
-                        height={400}
-                        className="w-full object-cover"
-                      />
-                    </div>
+                    <Link href="https://github.com/jaedonvisva/mesh">
+                      <div className="relative group rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
+                        <Image
+                          src="/images/meshio.png"
+                          alt="project screenshot"
+                          width={600}
+                          height={400}
+                          className="w-full object-cover"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 group-hover:opacity-80 transition-opacity">
+                          <span className="text-white font-bold text-lg">
+                            Learn more
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
                     <div>
                       <h3 className="text-2xl font-bold font-pressstart">
                         Mesh.io
@@ -198,15 +226,22 @@ export default function PortfolioSection() {
 
                   {/* Project 5 */}
                   <div className="space-y-4">
-                    <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
-                      <Image
-                        src="/images/tick.png"
-                        alt="project screenshot"
-                        width={600}
-                        height={400}
-                        className="w-full object-cover"
-                      />
-                    </div>
+                    <Link href="https://github.com/hareshgoyal06/tickup">
+                      <div className="relative group rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
+                        <Image
+                          src="/images/tick.png"
+                          alt="project screenshot"
+                          width={600}
+                          height={400}
+                          className="w-full object-cover"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 group-hover:opacity-80 transition-opacity">
+                          <span className="text-white font-bold text-lg">
+                            Learn more
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
                     <div>
                       <h3 className="text-2xl font-bold font-pressstart">
                         UpTick
@@ -220,15 +255,22 @@ export default function PortfolioSection() {
 
                   {/* Project 6 */}
                   <div className="space-y-4">
-                    <div className="rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
-                      <Image
-                        src="/images/tksgoogle.png"
-                        alt="project screenshot"
-                        width={600}
-                        height={400}
-                        className="w-full object-cover"
-                      />
-                    </div>
+                    <Link href="https://www.loom.com/share/6752c5965c494f7db54481449e677104?sid=50a82a89-57b8-4c04-862b-e8d84156bece">
+                      <div className="relative group rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
+                        <Image
+                          src="/images/tksgoogle.png"
+                          alt="project screenshot"
+                          width={600}
+                          height={400}
+                          className="w-full object-cover"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 group-hover:opacity-80 transition-opacity">
+                          <span className="text-white font-bold text-lg">
+                            Learn more
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
                     <div>
                       <h3 className="text-2xl font-bold font-pressstart">
                         TKSxGoogle
