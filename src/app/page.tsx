@@ -3,16 +3,8 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ParallaxBackground from "./components/ParallaxBackground";
 import MarioRunning from "./components/MarioRunning";
-import {Navbar} from "./components/Navbar";
-import Terminal from "./components/Terminal";
 import PortfolioSection from "./components/Portfolio";
-import {
-  IconBrandGithub,
-  IconHome,
-  IconBrandLinkedin,
-  IconBrandInstagram,
-  IconPaperclip,
-} from "@tabler/icons-react";
+import SocialButtons from "./components/SocialButtons";
 // Container variants with smoother easing and scale
 const containerVariants = {
   hidden: { opacity: 0, scale: 0.95 },
@@ -31,46 +23,6 @@ const containerVariants = {
     transition: { duration: 0.5, ease: "easeIn" },
   },
 };
-
-const links = [
-  {
-    title: "Home",
-    icon: (
-      <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "#hero",
-  },
-  {
-    title: "Instagram",
-    icon: (
-      <IconBrandInstagram className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "https://www.instagram.com/hxreshgoyal/",
-  },
-
-  {
-    title: "LinkedIn",
-    icon: (
-      <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "https://www.linkedin.com/in/haresh-goyal/",
-  },
-  {
-    title: "GitHub",
-    icon: (
-      <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "https://github.com/hareshgoyal06",
-  },
-  {
-    title: "Resume",
-    icon: (
-      <IconPaperclip className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "/resume.pdf",
-  },
-];
-
 
 interface PreloaderProps {
   onFinish: () => void;
@@ -95,15 +47,14 @@ const Preloader: React.FC<PreloaderProps> = ({ onFinish }) => {
         backgroundSize: "20px 20px",
       }}
       variants={containerVariants}
-      initial="visible"   // Start immediately visible
-      animate="visible"   // Keep it visible (no fade-in)
-      exit="exit"         // Only fade out on exit
+      initial="visible" // Start immediately visible
+      animate="visible" // Keep it visible (no fade-in)
+      exit="exit" // Only fade out on exit
     >
       <MarioRunning />
     </motion.div>
   );
 };
-
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -123,18 +74,13 @@ const App: React.FC = () => {
           <div id="hero">
             <ParallaxBackground />
           </div>
-          <div className="max-w-7xl mx-auto p-4 t ">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 p-8 ">
-              <Terminal />
+          <div className="max-w-7xl mx-auto p-4">
+            <div className="flex flex-col items-center justify-center gap-4 p-4">
+              <SocialButtons />
             </div>
-            <div className="mt-20">
+            <div className="mt-8">
               <PortfolioSection />
             </div>
-
-            
-          </div>
-          <div className="max-w-7xl mx-auto">
-            {!loading && <Navbar items={links} />}
           </div>
         </div>
       </div>

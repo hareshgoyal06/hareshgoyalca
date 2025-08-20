@@ -8,12 +8,12 @@ export default function PortfolioSection() {
     <>
       {/* Embed the fonts directly in this component */}
       <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap');
+        @import url("https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap");
         .font-vt323 {
-          font-family: 'VT323', monospace;
+          font-family: "VT323", monospace;
         }
         .font-pressstart {
-          font-family: 'Press Start 2P', cursive;
+          font-family: "Press Start 2P", cursive;
         }
       `}</style>
       <div
@@ -31,8 +31,10 @@ export default function PortfolioSection() {
                 <p className="text-lg text-zinc-300">
                   Developer and engineer studying{" "}
                   <Link
-                    href="#"
+                    href="https://uwaterloo.ca/future-students/programs/computer-engineering"
                     className="underline underline-offset-4 text-yellow-500"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Computer Engineering @ the University of Waterloo
                   </Link>
@@ -48,6 +50,34 @@ export default function PortfolioSection() {
               <div className="space-y-6 pt-4">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                    <div className="w-8 h-8 bg-yellow-600 rounded flex items-center justify-center text-white font-bold text-sm">
+                      ON
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl text-yellow-600 font-semibold font-pressstart">
+                      Ontario Ministry of Finance
+                    </h3>
+                    <p className="text-zinc-400">Software Engineer</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                    <div className="w-8 h-8 bg-blue-700 rounded flex items-center justify-center text-white font-bold text-sm">
+                      UW
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl text-blue-700 font-semibold font-pressstart">
+                      UW Blueprint
+                    </h3>
+                    <p className="text-zinc-400">Project Developer</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
                     <Image
                       src="/images/savi.jpg"
                       alt="logo"
@@ -57,12 +87,24 @@ export default function PortfolioSection() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl text-yellow-500 font-semibold font-pressstart">
+                    <h3 className="text-xl text-yellow-600 font-semibold font-pressstart">
                       Savi Finance
                     </h3>
-                    <p className="text-zinc-400">
-                      Full-Stack Developer Intern
-                    </p>
+                    <p className="text-zinc-400">AI Software Engineer</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                    <div className="w-8 h-8 bg-blue-700 rounded flex items-center justify-center text-white font-bold text-sm">
+                      S
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl text-blue-700 font-semibold font-pressstart">
+                      Swimingo
+                    </h3>
+                    <p className="text-zinc-400">Full Stack Engineer</p>
                   </div>
                 </div>
 
@@ -77,10 +119,10 @@ export default function PortfolioSection() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl text-purple-900 font-semibold font-pressstart">
+                    <h3 className="text-xl text-purple-700 font-semibold font-pressstart">
                       Learning Enrichment Foundation
                     </h3>
-                    <p className="text-zinc-400">Technical Agent</p>
+                    <p className="text-zinc-400">Technical Analyst</p>
                   </div>
                 </div>
 
@@ -102,11 +144,18 @@ export default function PortfolioSection() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Center GitHub Calendar */}
+            <div className="col-span-1 md:col-span-2 flex justify-center my-8">
               <GreenThemeGitHubCalendar />
             </div>
 
             {/* Right Column - Projects */}
             <div>
+              <h2 className="text-2xl font-bold font-pressstart text-white mb-6">
+                Projects
+              </h2>
               <ScrollArea className="h-[80vh] pr-4">
                 {/* Updated grid: one project per row */}
                 <div className="grid grid-cols-1 gap-8">
@@ -190,7 +239,8 @@ export default function PortfolioSection() {
                         DripFlip
                       </h3>
                       <p className="text-zinc-300">
-                        A "Tinder-like" app used to give catered personalizations
+                        A "Tinder-like" app used to give catered
+                        personalizations
                       </p>
                     </div>
                   </div>
@@ -276,8 +326,8 @@ export default function PortfolioSection() {
                         TKSxGoogle
                       </h3>
                       <p className="text-zinc-300">
-                        Worked alongside Google to find a way to make their business
-                        model more effective
+                        Worked alongside Google to find a way to make their
+                        business model more effective
                       </p>
                     </div>
                   </div>

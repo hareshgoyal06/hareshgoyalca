@@ -1,12 +1,12 @@
 "use client";
 
-import React from 'react';
-import GitHubCalendar from 'react-github-calendar';
-import { VT323 } from 'next/font/google';
+import React from "react";
+import GitHubCalendar from "react-github-calendar";
+import { VT323 } from "next/font/google";
 
 const vt323 = VT323({
-  subsets: ['latin'],
-  weight: '400',
+  subsets: ["latin"],
+  weight: "400",
 });
 
 // Flat theme for contributions (using a popular flat UI palette)
@@ -18,53 +18,46 @@ export const flatTheme = [
   "#e74c3c", // Level 4: red
 ];
 
-// Filter function: only show contributions from the last 6 months
-const selectLastHalfYear = (contributions: any[]) => {
+// Filter function: show contributions from the beginning of the current year
+const selectCurrentYear = (contributions: any[]) => {
   const currentYear = new Date().getFullYear();
-  const currentMonth = new Date().getMonth(); // 0-indexed
-  const shownMonths = 6;
 
   return contributions.filter((activity) => {
     const date = new Date(activity.date);
-    const monthOfDay = date.getMonth();
-    return (
-      date.getFullYear() === currentYear &&
-      monthOfDay > currentMonth - shownMonths &&
-      monthOfDay <= currentMonth
-    );
+    return date.getFullYear() === currentYear;
   });
 };
 
 const GreenThemeGitHubCalendar = () => {
   return (
     <div
-      className={`${vt323.className} text-white p-2 rounded-lg w-full max-w-md mx-auto`}
+      className={`${vt323.className} text-white p-2 rounded-lg w-full max-w-4xl mx-auto`}
       style={{
-        margin: '1rem auto',
+        margin: "1rem auto",
       }}
     >
       <GitHubCalendar
         username="hareshgoyal06"
         year="last"
-        transformData={selectLastHalfYear}
+        transformData={selectCurrentYear}
         transformTotalCount={true}
         hideColorLegend={false}
         hideMonthLabels={false}
         hideTotalCount={true}
         labels={{
-          totalCount: '{{count}} contributions in the last half year',
+          totalCount: "{{count}} contributions this year",
         }}
         // Scaled-down appearance settings
-        blockMargin={5}
-        blockRadius={2}
-        blockSize={24}
-        fontSize={24}
+        blockMargin={6}
+        blockRadius={3}
+        blockSize={28}
+        fontSize={26}
         colorScheme="dark"
         weekStart={0}
         // Custom container style with no background
         style={{
-          padding: '0.5rem',
-          borderRadius: '4px',
+          padding: "0.5rem",
+          borderRadius: "4px",
         }}
         theme={{
           light: flatTheme,
