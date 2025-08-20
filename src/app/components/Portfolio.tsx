@@ -50,8 +50,14 @@ export default function PortfolioSection() {
               <div className="space-y-6 pt-4">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
-                    <div className="w-8 h-8 bg-yellow-600 rounded flex items-center justify-center text-white font-bold text-sm">
-                      ON
+                    <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
+                      <Image
+                        src="/images/ontario.png"
+                        alt="logo"
+                        width={24}
+                        height={24}
+                        className="object-contain"
+                      />
                     </div>
                   </div>
                   <div>
@@ -64,9 +70,13 @@ export default function PortfolioSection() {
 
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
-                    <div className="w-8 h-8 bg-blue-700 rounded flex items-center justify-center text-white font-bold text-sm">
-                      UW
-                    </div>
+                    <Image
+                      src="/images/blueprint.png"
+                      alt="logo"
+                      width={32}
+                      height={32}
+                      className="object-contain"
+                    />
                   </div>
                   <div>
                     <h3 className="text-xl text-blue-700 font-semibold font-pressstart">
@@ -96,9 +106,13 @@ export default function PortfolioSection() {
 
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
-                    <div className="w-8 h-8 bg-blue-700 rounded flex items-center justify-center text-white font-bold text-sm">
-                      S
-                    </div>
+                    <Image
+                      src="/images/swimingo.png"
+                      alt="logo"
+                      width={32}
+                      height={32}
+                      className="object-contain"
+                    />
                   </div>
                   <div>
                     <h3 className="text-xl text-blue-700 font-semibold font-pressstart">
@@ -146,11 +160,6 @@ export default function PortfolioSection() {
               </div>
             </div>
 
-            {/* Center GitHub Calendar */}
-            <div className="col-span-1 md:col-span-2 flex justify-center my-8">
-              <GreenThemeGitHubCalendar />
-            </div>
-
             {/* Right Column - Projects */}
             <div>
               <h2 className="text-2xl font-bold font-pressstart text-white mb-6">
@@ -160,6 +169,35 @@ export default function PortfolioSection() {
                 {/* Updated grid: one project per row */}
                 <div className="grid grid-cols-1 gap-8">
                   {/* Project 1 */}
+                  <div className="space-y-6">
+                    <Link href="https://github.com/hareshgoyal06/chunkymonkey">
+                      <div className="relative group rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
+                        <Image
+                          src="/images/chunky.png"
+                          alt="project screenshot"
+                          width={600}
+                          height={400}
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 group-hover:opacity-80 transition-opacity">
+                          <span className="text-white font-bold text-lg">
+                            Learn more
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                    <div>
+                      <h3 className="text-2xl font-bold font-pressstart">
+                        Chunky Monkey
+                      </h3>
+                      <p className="text-zinc-300">
+                        Developed CLI-based RAG tool with open-source Ollama
+                        LLMs, enabling semantic search across Git/local repos
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Project 2 */}
                   <div className="space-y-4">
                     <Link href="https://www.youtube.com/watch?v=j6_oXbUtO08">
                       <div className="relative group rounded-lg overflow-hidden border border-zinc-800 hover:shadow-lg transition-shadow">
@@ -334,6 +372,11 @@ export default function PortfolioSection() {
                 </div>
               </ScrollArea>
             </div>
+          </div>
+
+          {/* GitHub Calendar below the main grid */}
+          <div className="flex justify-center mt-12">
+            <GreenThemeGitHubCalendar />
           </div>
         </div>
       </div>
