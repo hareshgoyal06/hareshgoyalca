@@ -103,29 +103,44 @@ const experiences: Experience[] = [
 const projects: Project[] = [
   {
     name: "Tunnel",
-    tag: "2x winner · Hack the North",
+    tag: "2x winner @ Hack the North · AI agents for market research",
     tagline: "AI research platform simulating user interviews at scale via multi-agent LLM orchestration.",
     award: "2x Winner — Hack the North 2025",
     metric: "750k+ organic impressions · YC interview stage",
     stack: ["Next.js", "Python", "Cohere", "Vapi", "MongoDB"],
-    links: [{ label: "GitHub", href: "https://github.com/hareshgoyal06/tunnel" }],
+    links: [{ label: "GitHub", href: "https://github.com/krish1905/tunnel" }],
   },
   {
     name: "Velum",
-    tag: "winner · HackIllinois",
+    tag: "winner @ HackIllinois · adversarial ML for document privacy",
     tagline: "Privacy-preserving data platform hardening documents against AI extraction using adversarial ML.",
     award: "Winner — HackIllinois 2026",
     metric: "Pixel noise injection · UAP perturbations",
     stack: ["Python", "TypeScript", "Next.js", "Supabase"],
-    links: [{ label: "GitHub", href: "https://github.com/hareshgoyal06/velum" }],
+    links: [{ label: "GitHub", href: "https://github.com/MarcDasilva/Velum" }],
+  },
+  {
+    name: "ChunkyMonkey",
+    tag: "semantic search & RAG over your documents · built in Rust",
+    tagline: "Rust-based semantic search and RAG system that indexes documents and delivers context-aware answers via multi-strategy retrieval.",
+    metric: "Ollama · Pinecone vector search",
+    stack: ["Rust", "Ollama", "Pinecone"],
+    links: [{ label: "GitHub", href: "https://github.com/hareshgoyal06/ChunkyMonkey" }],
+  },
+  {
+    name: "NeuroBlocks",
+    tag: "block-based coding for brain-computer interfaces",
+    tagline: "Visual drag-and-drop coding interface for EEG applications, letting beginners build BCI programs with real-time brainwave data.",
+    stack: ["Google Blockly", "Flask", "BrainFlow", "JavaScript"],
+    links: [{ label: "GitHub", href: "https://github.com/hareshgoyal06/neuroblock" }],
   },
   {
     name: "BobaTalks Flowers Discord Bot",
-    tag: "13k+ student member community",
+    tag: "13k+ student community · Discord automation tooling",
     tagline: "Discord automation and workflow tooling for a 13,000+ member student-mentor community.",
     metric: "13k+ members · Google Sheets & Drive integrations",
     stack: ["Node.js", "TypeScript", "AWS EC2", "PM2"],
-    links: [{ label: "GitHub", href: "https://github.com/hareshgoyal06/bobatalks-flowers" }],
+    links: [{ label: "GitHub", href: "https://github.com/uwblueprint/bobatalks" }],
   },
 ];
 
@@ -156,7 +171,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         </button>
 
         <div className="flex items-center gap-2 flex-wrap mb-3">
-          <span className="text-[15px] text-[#e8e4dc]" style={{ fontFamily: "var(--font-editorial)", fontWeight: 800 }}>{project.name}</span>
+          <span className="font-heading text-[17px] text-[#e8e4dc]" style={{ fontWeight: 400, fontStyle: "italic" }}>{project.name}</span>
           {project.award && (
             <span className="text-[10px] text-[#4a4845] border border-[#222120] px-1.5 py-0.5 rounded-sm">{project.award}</span>
           )}
@@ -275,7 +290,7 @@ export default function Home() {
         >
           Computer Engineering
         </a>{" "}
-        at The{" "}
+        at the{" "}
         <Image src={waterloo} alt="UWaterloo" width={20} height={20} className="rounded-sm object-contain" style={{ display: "inline", verticalAlign: "middle" }} />
         {" "}University of Waterloo.
         <br /><br />
@@ -329,11 +344,11 @@ export default function Home() {
                 onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.03)")}
                 onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
               >
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span className="text-[13px] text-[#c8c4bc] group-hover:text-[#e8e4dc] transition-colors duration-150">{proj.name}</span>
-                  <span className="text-[10px] text-[#3a3835] border border-[#1e1d1b] group-hover:border-[#2e2d2b] group-hover:text-[#5a5856] px-1.5 py-0.5 rounded-sm transition-colors duration-150">{proj.tag}</span>
+                <div className="flex flex-col gap-0.5">
+                  <span className="font-heading text-[14px] text-[#c8c4bc] group-hover:text-[#e8e4dc] transition-colors duration-150" style={{ fontWeight: 400, fontStyle: "italic" }}>{proj.name}</span>
+                  <span className="text-[11px] text-[#4a4845] group-hover:text-[#6a6560] transition-colors duration-150">{proj.tag}</span>
                 </div>
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#2e2d2b] group-hover:text-[#6a6560] transition-colors duration-150 ml-2 shrink-0">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#6a6560] group-hover:text-[#c8c4bc] transition-colors duration-150 ml-2 shrink-0">
                   <path d="M7 17L17 7"/><path d="M7 7h10v10"/>
                 </svg>
               </button>
