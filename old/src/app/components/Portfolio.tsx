@@ -36,7 +36,7 @@ export default function PortfolioSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Computer Engineering @ the University of Waterloo
+                    Computer Engineering @ the UWaterloo
                   </Link>
                   . Always Building.
                 </p>

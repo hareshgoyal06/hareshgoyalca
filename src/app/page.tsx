@@ -147,14 +147,14 @@ const projects: Project[] = [
 function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center"
       style={{ background: "rgba(0,0,0,0.6)", backdropFilter: "blur(4px)" }}
       onClick={onClose}
     >
       <div
-        className="relative rounded-2xl p-6 max-w-sm w-full mx-6"
+        className="relative rounded-t-2xl sm:rounded-2xl p-6 max-w-sm w-full mx-0 sm:mx-6 max-h-[85vh] overflow-y-auto"
         style={{
-          background: "rgba(18,16,14,0.85)",
+          background: "rgba(18,16,14,0.95)",
           backdropFilter: "blur(20px)",
           WebkitBackdropFilter: "blur(20px)",
           border: "1px solid rgba(255,255,255,0.08)",
@@ -214,7 +214,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
 function Dropdown({ label, open, onToggle, children }: { label: string; open: boolean; onToggle: () => void; children: React.ReactNode }) {
   return (
-    <div className="w-full max-w-sm">
+    <div className="w-full max-w-sm min-w-0">
       <button
         onClick={onToggle}
         className="flex items-center gap-2 text-[13px] text-[#6a6560] hover:text-[#b0aca4] transition-colors duration-200 cursor-pointer select-none"
@@ -255,7 +255,7 @@ export default function Home() {
     setActiveDropdown(prev => prev === name ? null : name);
 
   return (
-    <main className="px-8 pt-8">
+    <main className="px-5 sm:px-8 pt-8 pb-16">
       {/* Name + icons */}
       <div>
         <h1 className="font-heading text-4xl leading-tight" style={{ fontStyle: "italic", fontWeight: 400, color: "#e8e4dc" }}>
@@ -278,7 +278,7 @@ export default function Home() {
       </div>
 
       {/* Bio */}
-      <p className="mt-8 max-w-sm leading-relaxed text-[#b0aca4] text-[14px]">
+      <p className="mt-8 w-full max-w-sm leading-relaxed text-[#b0aca4] text-[14px]">
         Based in Toronto and Waterloo. Studying
         <br />
         <a
@@ -292,7 +292,7 @@ export default function Home() {
         </a>{" "}
         at the{" "}
         <Image src={waterloo} alt="UWaterloo" width={20} height={20} className="rounded-sm object-contain" style={{ display: "inline", verticalAlign: "middle" }} />
-        {" "}University of Waterloo.
+        {" "}UWaterloo.
         <br /><br />
         Started moving pixels with HTML and vanilla JS, now burning through tokens on claude.
         <br /><br />
@@ -304,7 +304,7 @@ export default function Home() {
       </p>
 
       {/* Dropdowns */}
-      <div className="mt-8 flex flex-col gap-3">
+      <div className="mt-8 flex flex-col gap-3 w-full max-w-sm">
         <Dropdown label="experience" open={activeDropdown === "experience"} onToggle={() => toggle("experience")}>
           <div className="flex flex-col gap-4">
             {experiences.map((exp) => (
