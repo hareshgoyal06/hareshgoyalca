@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Grain from "@/components/Grain";
+import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 const editorial = localFont({
   variable: "--font-editorial",
@@ -41,6 +43,14 @@ export default function RootLayout({
         <div className="relative z-10 flex flex-col flex-1">
           {children}
         </div>
+        <Analytics />
+        <Script
+          id="clarity"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","xjhijjfr6l");`,
+          }}
+        />
       </body>
     </html>
   );
