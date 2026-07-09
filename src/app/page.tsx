@@ -225,9 +225,9 @@ function Dropdown({ label, open, onToggle, children }: { label: string; open: bo
 
       <div
         style={{
-          maxHeight: open ? "600px" : "0px",
+          maxHeight: open ? "min(600px, calc(100dvh - 380px))" : "0px",
           opacity: open ? 1 : 0,
-          overflow: "hidden",
+          overflow: open ? "auto" : "hidden",
           transition: "max-height 0.4s ease, opacity 0.3s ease",
         }}
       >
@@ -255,7 +255,7 @@ export default function Home() {
     setActiveDropdown(prev => prev === name ? null : name);
 
   return (
-    <main className="px-5 sm:px-8 pt-8 pb-16">
+    <main className="px-5 sm:px-8 pt-5 sm:pt-8 pb-5 sm:pb-16">
       {/* Name + icons */}
       <div>
         <h1 className="font-heading text-4xl leading-tight" style={{ fontStyle: "italic", fontWeight: 400, color: "#e8e4dc" }}>
@@ -278,33 +278,36 @@ export default function Home() {
       </div>
 
       {/* Bio */}
-      <p className="mt-8 w-full max-w-sm leading-relaxed text-[#b0aca4] text-[14px]">
-        Based in Toronto and Waterloo. Studying
-        <br />
-        <a
-          href="https://uwaterloo.ca/future-students/programs/computer-engineering"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-heading px-1 hover:opacity-70 transition-opacity duration-200"
-          style={{ fontStyle: "italic", fontWeight: 400, color: "#d4d0c8", fontSize: "15px" }}
-        >
-          Computer Engineering
-        </a>{" "}
-        at the{" "}
-        <Image src={waterloo} alt="UWaterloo" width={20} height={20} className="rounded-sm object-contain" style={{ display: "inline", verticalAlign: "middle" }} />
-        {" "}UWaterloo.
-        <br /><br />
-        Started moving pixels with HTML and vanilla JS, now burning through tokens on claude.
-        <br /><br />
-        Currently at{" "}
-        <Image src={jeeves} alt="Jeeves" width={22} height={22} className="rounded-full object-cover" style={{ display: "inline", verticalAlign: "middle" }} />
-        {" "}<span className="text-[#d4d0c8]">Jeeves</span> <span className="text-[#6a6560] text-[12px]">(YC S20)</span>.{" "}
-        Incoming at{" "}
-        <IconShopify size={17} />{" "}<span className="text-[#d4d0c8]">Shopify.</span>
-      </p>
+      <div className="mt-4 sm:mt-8 w-full max-w-sm leading-relaxed text-[#b0aca4] text-[14px]">
+        <p>
+          Based in Toronto and Waterloo. Studying{" "}
+          <a
+            href="https://uwaterloo.ca/future-students/programs/computer-engineering"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-heading px-1 hover:opacity-70 transition-opacity duration-200"
+            style={{ fontStyle: "italic", fontWeight: 400, color: "#d4d0c8", fontSize: "15px" }}
+          >
+            Computer Engineering
+          </a>{" "}
+          at the{" "}
+          <Image src={waterloo} alt="UWaterloo" width={20} height={20} className="rounded-sm object-contain" style={{ display: "inline", verticalAlign: "middle" }} />
+          {" "}UWaterloo.
+        </p>
+        <p className="mt-3 sm:mt-4">
+          Started moving pixels with HTML and vanilla JS, now burning through tokens on claude.
+        </p>
+        <p className="mt-3 sm:mt-4">
+          Currently at{" "}
+          <Image src={jeeves} alt="Jeeves" width={22} height={22} className="rounded-full object-cover" style={{ display: "inline", verticalAlign: "middle" }} />
+          {" "}<span className="text-[#d4d0c8]">Jeeves</span> <span className="text-[#6a6560] text-[12px]">(YC S20)</span>.{" "}
+          Incoming at{" "}
+          <IconShopify size={17} />{" "}<span className="text-[#d4d0c8]">Shopify.</span>
+        </p>
+      </div>
 
       {/* Dropdowns */}
-      <div className="mt-8 flex flex-col gap-3 w-full max-w-sm">
+      <div className="mt-4 sm:mt-8 flex flex-col gap-3 w-full max-w-sm">
         <Dropdown label="experience" open={activeDropdown === "experience"} onToggle={() => toggle("experience")}>
           <div className="flex flex-col gap-4">
             {experiences.map((exp) => (
@@ -339,7 +342,7 @@ export default function Home() {
               <button
                 key={proj.name}
                 onClick={() => setSelectedProject(proj)}
-                className="flex items-center justify-between w-full text-left group py-2 rounded-md transition-all duration-150 cursor-pointer"
+                className="flex items-start justify-between w-full text-left group py-2 rounded-md transition-all duration-150 cursor-pointer"
                 style={{ background: "transparent" }}
                 onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.03)")}
                 onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
